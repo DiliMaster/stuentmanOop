@@ -1,0 +1,31 @@
+public class Student {
+    private String name;
+    private String id;
+    private double[] grades;
+
+    public Student(String name, String id, double[] grades) {
+        this.name = name;
+        this.id = id;
+        this.grades = grades;
+    }
+
+    public double calculateAverage() {
+        double sum = 0;
+        for (double grade : grades) {
+            sum += grade;
+        }
+        return sum / grades.length;
+    }
+
+    public void displayInfo() {
+        System.out.println("Student ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Average Grade: " + calculateAverage());
+    }
+
+    public static void main(String[] args) {
+        double[] johnsGrades = {85.5, 90.0, 78.5, 92.5};
+        Student john = new Student("John Smith", "S12345", johnsGrades);
+        john.displayInfo();
+    }
+}
